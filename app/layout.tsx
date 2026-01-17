@@ -24,7 +24,7 @@ export const metadata: Metadata = {
   ],
 
   verification: {
-  google: "PASTE_EXACT_CODE_FROM_SEARCH_CONSOLE"
+  google: "GAu9Oy62E2PDsrU4U1SsQYd_FtuHPz-czmbyyanBPW8",
 },
   
   generator: "v0.app",
