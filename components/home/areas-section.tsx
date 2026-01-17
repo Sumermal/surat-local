@@ -1,0 +1,53 @@
+"use client"
+
+import Link from "next/link"
+import { ArrowRight } from "lucide-react"
+import { Button } from "@/components/ui/button"
+import { AreaCard } from "@/components/area-card"
+import { useLanguage } from "@/lib/language-context"
+import { translations } from "@/lib/translations"
+import type { Area } from "@/lib/types"
+
+interface AreasSectionProps {
+  areas: Area[]
+}
+
+export function AreasSection({ areas }: AreasSectionProps) {
+  const { t } = useLanguage()
+
+  return (
+    <section className="py-16 sm:py-20">
+      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <div className="mb-10 flex items-end justify-between">
+          <div>
+            <h2 className="text-2xl font-bold text-foreground sm:text-3xl">
+              {t("popularAreas", translations.popularAreas)}
+            </h2>
+            <p className="mt-2 text-muted-foreground">Explore businesses in different parts of Surat</p>
+          </div>
+          <Button variant="ghost" asChild className="hidden sm:inline-flex">
+            <Link href="/areas">
+              {t("viewAll", translations.viewAll)}
+              <ArrowRight className="ml-2 h-4 w-4" />
+            </Link>
+          </Button>
+        </div>
+
+        <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+          {areas.map((area) => (
+            <AreaCard key={area.id} area={area} />
+          ))}
+        </div>
+
+        <div className="mt-8 text-center sm:hidden">
+          <Button variant="outline" asChild>
+            <Link href="/areas">
+              {t("viewAll", translations.viewAll)}
+              <ArrowRight className="ml-2 h-4 w-4" />
+            </Link>
+          </Button>
+        </div>
+      </div>
+    </section>
+  )
+}
