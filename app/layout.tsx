@@ -13,7 +13,20 @@ export const metadata: Metadata = {
   title: "Surat Local - Your Complete City Guide | सूरत लोकल",
   description:
     "Discover the best of Surat - restaurants, shopping, services, healthcare, education and more. Your trusted local business directory for Surat, Gujarat.",
-  keywords: "Surat, Gujarat, local business, directory, restaurants, shopping, services, healthcare, education, सूरत",
+   keywords: [
+    "Surat",
+    "Gujarat",
+    "local business",
+    "Surat directory",
+    "restaurants in Surat",
+    "services in Surat",
+    "સુરત",
+  ],
+
+  verification: {
+    google: "GAu90y62E2PDsrU4U1SSQYd_FtuHPz-czmbryanBPW8",
+  },
+  
   generator: "v0.app",
   icons: {
     icon: [
